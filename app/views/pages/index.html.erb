@@ -1,0 +1,77 @@
+<h1>Welcome#index</h1>
+<p>Find me in app/views/welcome/index.html.erb</p>
+
+<head>
+  <title>Test Google Calendar API</title>
+  <!-- <script src="jquery-3.0.0.js"></script> -->
+  
+  <!-- include Google platform library on page -->
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js">
+  </script>
+  <script src="https://apis.google.com/js/client:platform.js?onload=start" async defer>
+  </script>
+
+  <!-- initialize GoogleAuth object -->
+<!--   <script>
+    function start() {
+      gapi.load('auth2', function() {
+        auth2 = gapi.auth2.init({
+          client_id: '1072088737400-0mufodco7n7utcg21v8mis7s407t5atq.apps.googleusercontent.com',
+          response_type: 'code'
+
+          // Scopes to request in addition to 'profile' and 'email'
+          //scope: 'additional_scope'
+        });
+      });
+    }
+  </script> -->
+</head>
+<body>
+  World's best Google Calendar API<br>
+  <!-- <button id="signup" type="button">Signup</button><br>
+  <button onclick=type="button">Get 10 events in JSON</button>
+  
+  <script type="text/javascript">
+    $("#signup").click(function() {
+      window.location.href = 'http://localhost:3000/authenticate';
+    });
+  </script> -->
+
+  <a href="/authCode"><button id="signinButton">Sign in with Google</button></a>
+<!--   <script>
+    $('#signinButton').click(function() {
+      // signInCallback defined in step 6.
+      auth2.grantOfflineAccess({'redirect_uri': 'postmessage'}).then(function (auth_response) {
+          // send one-time code to the server and wait for response
+          console.log(auth_response.code);
+          $.post('http://localhost:3000/authCode', {code: auth_response.code} );
+      });
+    });
+  </script>
+  <script>
+    function signInCallback(authResult) {
+      if (authResult['code']) {
+
+        // Hide the sign-in button now that the user is authorized, for example:
+        $('#signinButton').attr('style', 'display: none');
+
+        // Send the code to the server
+        $.ajax({
+          type: 'POST',
+          url: 'http://localhost:3000/authCode',
+          contentType: 'application/octet-stream; charset=utf-8',
+          success: function(result) {
+            // Handle or verify the server response.
+            console.log("successful auth code POST");
+          },
+          processData: false,
+          data: authResult['code']
+        });
+      } else {
+        // There was an error.
+        console.log("ERROR: authCode did not POST properly");
+      }
+    }
+  </script> -->
+
+</body>
